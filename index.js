@@ -15,4 +15,10 @@ app.get("/", (req, res) => res.send("Welcome!"));
 
 app.get("/users", (req, res) => res.send(users));
 
+app.post("/users", (req, res) => {
+  users.push(req.body);
+  res.status(201);
+  res.send();
+});
+
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
