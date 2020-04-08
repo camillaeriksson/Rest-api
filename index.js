@@ -21,4 +21,15 @@ app.post("/users", (req, res) => {
   res.send();
 });
 
+app.get("/users/:id", (req, res) => {
+  const user = users.find((user) => user.id === parseInt(req.params.id));
+  if (!user) res.status(404).send("The user was not found");
+  res.send(user);
+});
+
+app.delete("/users/:id", (req, res) => {
+  users.splice(parseInt(req.params.id - 1), 1);
+  res.send();
+});
+
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));

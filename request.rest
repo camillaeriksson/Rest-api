@@ -2,6 +2,14 @@ GET http://localhost:3000/users
 
 ###
 
+GET http://localhost:3000/users/1
+
+###
+
+GET http://localhost:3000/users/200
+
+###
+
 POST http://localhost:3000/users
 Content-type: application/json
 
@@ -11,3 +19,7 @@ Content-type: application/json
     "lastname": "Appelgren",
     "age": 65
 }
+
+###
+
+DELETE http://localhost:3000/users/2
