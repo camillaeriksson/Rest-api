@@ -19,6 +19,7 @@
   "homepage": "https://github.com/camillaeriksson/Rest-api#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "joi": "^13.1.0"
+    "joi": "^13.1.0",
+    "node-fetch": "^2.6.0"
   }
 }
