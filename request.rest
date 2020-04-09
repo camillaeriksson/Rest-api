@@ -22,4 +22,15 @@ Content-type: application/json
 
 ###
 
-DELETE http://localhost:3000/users/2
+DELETE http://localhost:3000/users/4
+
+###
+
+PUT http://localhost:3000/users/2
+Content-type: application/json
+
+{
+    "firstname": "Lisa",
+    "lastname": "Johansson",
+    "age": "32"
+}
