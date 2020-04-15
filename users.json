@@ -1,6 +1,26 @@
 [
-  { "id": 1, "firstname": "Lars", "lastname": "Bengtsson", "age": "45" },
-  { "firstname": "Lisa", "lastname": "Johansson", "age": "32", "id": 2 },
-  { "id": 3, "firstname": "Malin", "lastname": "Karlsson", "age": "28" },
-  { "id": 5, "firstname": "Anna", "lastname": "Appelgren", "age": 65 }
+  {
+    "id": 1,
+    "name": "Lars Bengtsson",
+    "age": "45",
+    "gender": "male"
+  },
+  {
+    "id": 2,
+    "name": "Ellen Skoglund",
+    "age": "19",
+    "gender": "female"
+  },
+  {
+    "id": 3,
+    "name": "Malin Karlsson",
+    "age": "28",
+    "gender": "female"
+  },
+  {
+    "id": 4,
+    "name": "Bengt Lilja",
+    "age": "55",
+    "gender": "male"
+  }
 ]

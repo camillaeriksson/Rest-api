@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  background-color: #5271a7;
+  border: 1px solid #1f2f47;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 13px;
+  padding: 6px 9px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #263666;
+}
+button:hover {
+  background-color: #8fa5cf;
+}
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+.userContainer {
+  width: 10rem;
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+#allUsers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

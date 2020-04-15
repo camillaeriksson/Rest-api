@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST-API</title>
+    <script defer src="./logic.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="allUsers"></div>
+
+    <input id="userIdInput" placeholder="Get user by id" type="number" />
+    <button onClick="getSpecificUser()">Get user</button>
+    <div id="specificUser"></div>
+    <input id="newUserId" placeholder="User id" type="text" />
+    <input id="newUserName" placeholder="User name" type="text" />
+    <input id="newUserAge" placeholder="User age" type="number" />
+    <input id="newUserGender" placeholder="User gender" type="text" />
+    <button onClick="addUser()">Add user</button>
+  </body>
+</html>

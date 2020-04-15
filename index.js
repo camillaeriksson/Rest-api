@@ -4,6 +4,7 @@ const port = 3000;
 const fs = require("fs");
 
 app.use(express.json());
+app.use(express.static("public"));
 
 app.get("/", (req, res) => res.send("Welcome!"));
 
@@ -26,7 +27,8 @@ app.get("/users/:id", (req, res) => {
   let userData = fs.readFileSync("users.json");
   let users = JSON.parse(userData);
   const user = users.find((user) => user.id === parseInt(req.params.id));
-  if (!user) res.status(404).send("The user was not found");
+  if (!user) res.status(404);
+  // .send("The user was not found");
   res.send(user);
 });
 
@@ -35,7 +37,7 @@ app.delete("/users/:id", (req, res) => {
   let users = JSON.parse(userData);
   const user = users.find((user) => user.id === parseInt(req.params.id));
   if (!user) {
-    res.status(404).send("The user was not found");
+    res.status(404);
   } else {
     users.splice(users.indexOf(user), 1);
   }
