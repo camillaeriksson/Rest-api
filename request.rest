@@ -15,9 +15,9 @@ Content-type: application/json
 
 {
     "id": 5,
-    "firstname": "Anna",
-    "lastname": "Appelgren",
-    "age": 65
+    "name": "Anna Appelgren",
+    "age": "65",
+    "gebder": "female"
 }
 
 ###
@@ -30,7 +30,7 @@ PUT http://localhost:3000/users/2
 Content-type: application/json
 
 {
-    "firstname": "Lisa",
-    "lastname": "Johansson",
-    "age": "32"
+    "name": "Lisa Johansson",
+    "age": "32",
+    "gender": "female"
 }

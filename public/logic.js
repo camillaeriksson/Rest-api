@@ -20,7 +20,7 @@ function printAllUsers(users) {
     <h4>Age: ${user.age}</h4>
     <h4>Gender: ${user.gender}</h4>
     <button onClick="deleteUser(event)">Delete</button>
-    <button onClick="updateUser(event)">Update</button>
+    <button onClick="openModal(event)">Update</button>
     </div>
     `;
   });
@@ -66,13 +66,15 @@ function addUser() {
   const userAge = document.getElementById("newUserAge").value;
   const userGender = document.getElementById("newUserGender").value;
 
+  console.log(userId);
+
   fetch("http://localhost:3000/users", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      id: Number(userId),
+      id: userId,
       name: userName,
       age: userAge,
       gender: userGender,
@@ -83,16 +85,41 @@ function addUser() {
 }
 
 function deleteUser(event) {
-  let id = event.target.parentElement.dataset.id;
+  let userId = event.target.parentElement.dataset.id;
 
-  fetch("http://localhost:3000/users/" + id, {
+  fetch("http://localhost:3000/users/" + userId, {
     method: "DELETE",
   }).then((response) => {
     getAllUsers();
   });
 }
 
-function updateUser(event) {
-  let id = event.target.parentElement.dataset.id;
-  console.log(id);
+function openModal(event) {
+  let userId = event.target.parentElement.dataset.id;
+  let updateButton = document.getElementById("updateButton");
+
+  var modal = document.getElementById("myModal");
+
+  modal.style.display = "block";
+
+  updateButton.onclick = function () {
+    const updatedUserName = document.getElementById("updateUserName").value;
+    const updatedUserAge = document.getElementById("updateUserAge").value;
+    const updatedUserGender = document.getElementById("updateUserGender").value;
+    fetch("http://localhost:3000/users/" + userId, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: Number(userId),
+        name: updatedUserName,
+        age: updatedUserAge,
+        gender: updatedUserGender,
+      }),
+    }).then((response) => {
+      getAllUsers();
+    });
+    modal.style.display = "none";
+  };
 }
