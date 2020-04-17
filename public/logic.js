@@ -15,12 +15,12 @@ function printAllUsers(users) {
   allUsersContainer.innerHTML = "";
   users.forEach((user) => {
     allUsersContainer.innerHTML += `
-    <div class="userContainer" data-id=${user.id}>
+    <div class="userContainer" data-id=${user.id} data-name="${user.name}" data-age=${user.age} data-gender=${user.gender}>
     <h3>${user.name}</h3>
     <h4>Age: ${user.age}</h4>
     <h4>Gender: ${user.gender}</h4>
     <button onClick="deleteUser(event)">Delete</button>
-    <button onClick="openModal(event)">Update</button>
+    <button onClick="updateUser(event)">Update</button>
     </div>
     `;
   });
@@ -94,25 +94,28 @@ function deleteUser(event) {
   });
 }
 
-function openModal(event) {
-  let userId = event.target.parentElement.dataset.id;
+function updateUser(event) {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
   let updateButton = document.getElementById("updateButton");
 
-  var modal = document.getElementById("myModal");
+  let userInfo = event.target.parentElement.dataset;
 
-  modal.style.display = "block";
+  document.getElementById("updateUserName").value = userInfo.name;
+  document.getElementById("updateUserAge").value = userInfo.age;
+  document.getElementById("updateUserGender").value = userInfo.gender;
 
   updateButton.onclick = function () {
     const updatedUserName = document.getElementById("updateUserName").value;
     const updatedUserAge = document.getElementById("updateUserAge").value;
     const updatedUserGender = document.getElementById("updateUserGender").value;
-    fetch("http://localhost:3000/users/" + userId, {
+    fetch("http://localhost:3000/users/" + userInfo.id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: Number(userId),
+        id: Number(userInfo.id),
         name: updatedUserName,
         age: updatedUserAge,
         gender: updatedUserGender,
