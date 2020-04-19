@@ -21,4 +21,8 @@ Det här är ett enklare REST-API med funktionalitet för CRUD skapat i NodeJS m
 - [x] 4. Ett simpelt klient-gränssnitt skall ﬁnnas för att anropa API:ets olika endpoints, samt visa upp resultatet vid GET anrop
 - [x] 5. Ytterligare en GET endpoint skall läggas till där det går att hämta ett speciﬁkt objekt
 
+## För att köra projektet
+
+Det enda du behöver göra för att bygga projektet är att köra npm i.
+
 [GitHub Repo](https://github.com/camillaeriksson/Rest-api)
