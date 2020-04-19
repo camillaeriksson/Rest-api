@@ -1,10 +1,10 @@
-# Rest-api
+## Rest-api
 
 Det här är ett enklare REST-API med funktionalitet för CRUD skapat i NodeJS med express. Det finns ett simpelt klient-gränssnitt för att visa alla användare, visa en specifik användare, ta bort en användare och uppdatera en användare. API:et går också att testa i filen request.rest. Användar-datan ligger i en JSON-fil som uppdateras om man tar bort eller redigerar en användare.
 
-## Uppfyllda krav
+# Uppfyllda krav
 
-# Krav för godkänt:
+## Krav för godkänt:
 
 1. Projektet innehåller minst 4 st. endpoints (GET, POST, PUT & DELETE för en resurs)
 2. Samtliga endpoints skall kunna nås via Postman
@@ -13,7 +13,7 @@ Det här är ett enklare REST-API med funktionalitet för CRUD skapat i NodeJS m
 5. Projektmappen innehåller en README.md ﬁl - (läs ovan för mer info)
 6. Uppgiften lämnas in i tid!
 
-# Krav för väl godkänt:
+## Krav för väl godkänt:
 
 1. Alla punkter för godkänt är uppfyllda
 2. All data skall vara sparad i en JSON-ﬁl istället för i serverﬁlen
