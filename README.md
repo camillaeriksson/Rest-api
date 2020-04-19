@@ -22,3 +22,7 @@ Det här är ett enklare REST-API med funktionalitet för CRUD skapat i NodeJS m
 [x] 5. Ytterligare en GET endpoint skall läggas till där det går att hämta ett speciﬁkt objekt
 
 [GitHub Repo](https://github.com/camillaeriksson/Rest-api)
+
+- [x] Finish my changes
+- [ ] Push my commits to GitHub
+- [ ] Open a pull request
